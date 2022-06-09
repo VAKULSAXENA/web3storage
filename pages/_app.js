@@ -61,7 +61,7 @@ function App() {
         const storage = new Web3Storage({token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDZlNTU3NDFGOTE5NDEyMjM4MTQ0ODBGMjViRTJGQmVkYjc0YURhOEEiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2NTQxNjU1MjMwNDEsIm5hbWUiOiJkZW1vIn0.lWmqCWz3T_2VDhtP9oQBDEbK8x6q1Rtb2jUi5SGEx2U'});
         const cid = await storage.put(files);
         
-        console.log(cid);
+        console.log(`https://ipfs.io/ipfs/${cid}`);
         
         const metadata = {
           name:'ape',
@@ -70,7 +70,7 @@ function App() {
         }
         const meta=new File([JSON.stringify(metadata)],'metadata.json')
         const metacid = await storage.put([meta]);
-          console.log(metacid);
+          console.log(`https://ipfs.io/ipfs/${metacid}`);
         
        }}
          />
@@ -95,7 +95,7 @@ function App() {
       //     }
       //  }
         // reader.readAsArrayBuffer(file);
-        console.log(image);
+        //console.log(image);
         let tx = await bundlr.uploader.upload(image,[{name:"Content-Type",value:"image/png"}]);
         const uri = `http://arweave.net/${tx.data.id}`;
        console.log(uri);
@@ -115,7 +115,7 @@ function App() {
           description:'nice ape',
           image: new File([file],'ape.png',{type:'image/png'})
         })
-         console.log(metadata.url);
+         console.log(`https://ipfs.io/ipfs/${metadata.ipnft}/metadata.json`);
        }}
          />
          </label>
