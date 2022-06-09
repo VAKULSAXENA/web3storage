@@ -63,11 +63,11 @@ function App() {
         
         console.log(`https://ipfs.io/ipfs/${cid}`);
         
-        const metadata = {
-          name:'ape',
-          description:'nice ape',
-          image: "https://apeurl"
-        }
+        // const metadata = {
+        //   name:'ape',
+        //   description:'nice ape',
+        //   image: "https://apeurl"
+        // }
         const meta=new File([JSON.stringify(metadata)],'metadata.json')
         const metacid = await storage.put([meta]);
           console.log(`https://ipfs.io/ipfs/${metacid}`);
