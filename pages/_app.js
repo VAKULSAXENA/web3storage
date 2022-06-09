@@ -17,7 +17,7 @@ const arweave = Arweave.init({host:'arweave.net',port:443,protocol:'https',timeo
 function App() {
   let[start,setStart]=useState('');
   return (
-    <div className="App" style={{marginTop:25}}>
+    <div style={{marginLeft:500,marginTop:50}}>
       <button onClick={()=>{
         setStart('ipfs')
       }}>IPFS</button>
